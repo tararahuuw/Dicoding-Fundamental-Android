@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fundamental_Android">
         <activity
-            android:name=".DetailUser"
+            android:name=".activity.DetailUser"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activity.SplashScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="false">
         </activity>
     </application>
