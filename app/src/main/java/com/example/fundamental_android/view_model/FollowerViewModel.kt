@@ -6,9 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.fundamental_android.api_service.ApiConfig
-import com.example.fundamental_android.api_service.ResponseApi.ResponseDetailUser
 import com.example.fundamental_android.api_service.ResponseApi.ResponseFollowers
-import com.example.fundamental_android.api_service.ResponseApi.ResponseUsersSearch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,7 +16,7 @@ class FollowerViewModel : ViewModel() {
     private val _userData = MutableLiveData<ArrayList<ResponseFollowers>>()
     val userData : LiveData<ArrayList<ResponseFollowers>> = _userData
 
-    private val _isLoading = MutableLiveData<Boolean>(false)
+    private val _isLoading = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
 
     fun loadDataUser(dataUser : String) {

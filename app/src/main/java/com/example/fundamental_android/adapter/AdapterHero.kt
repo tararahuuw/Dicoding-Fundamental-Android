@@ -23,10 +23,8 @@ class AdapterHero(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-
         Picasso.get().load(listHero[position].avatarUrl).into(holder.imgPhoto);
         holder.tvName.text = listHero[position].login
-
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
     }
 
@@ -39,5 +37,10 @@ class AdapterHero(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<
 
     interface OnItemClickCallback {
         fun onItemClicked(data: Hero)
+    }
+
+    fun setData(newList: List<Hero>) {
+        listHero.clear()
+        listHero.addAll(newList)
     }
 }

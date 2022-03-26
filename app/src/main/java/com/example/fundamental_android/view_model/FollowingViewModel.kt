@@ -16,7 +16,7 @@ class FollowingViewModel : ViewModel() {
     private val _userData = MutableLiveData<ArrayList<ResponseFollowing>>()
     val userData: LiveData<ArrayList<ResponseFollowing>> = _userData
 
-    private val _isLoading = MutableLiveData<Boolean>(false)
+    private val _isLoading = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
 
     fun loadDataUser(dataUser: String) {

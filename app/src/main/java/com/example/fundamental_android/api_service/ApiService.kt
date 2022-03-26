@@ -9,7 +9,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
-
     @GET("search/users")
     fun getUserSearch(
         @Query("q") username : String
@@ -29,5 +28,4 @@ interface ApiService {
     fun getFollowing(
         @Path("username") username: String
     ): Call<ArrayList<ResponseFollowing>>
-
 }

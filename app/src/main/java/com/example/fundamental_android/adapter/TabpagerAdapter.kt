@@ -16,7 +16,6 @@ class TabpagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activi
     }
 
     override fun createFragment(position: Int): Fragment {
-
         var fragment : Fragment? = null
         when(position) {
             0 -> {

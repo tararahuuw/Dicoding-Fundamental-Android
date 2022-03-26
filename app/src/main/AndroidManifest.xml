@@ -12,8 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fundamental_Android">
         <activity
+            android:name=".activity.Favorites"
+            android:exported="false"
+            android:label="Favorites"
+            android:parentActivityName=".activity.MainActivity"/>
+        <activity
             android:name=".activity.DetailUser"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Detail User"
+            android:parentActivityName=".activity.MainActivity"/>
         <activity
             android:name=".activity.SplashScreen"
             android:exported="true"
@@ -26,8 +33,8 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false">
-        </activity>
+            android:label="Home"
+            android:exported="false" />
     </application>
 
 </manifest>

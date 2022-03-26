@@ -34,21 +34,16 @@ class FollowingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val name = arguments?.getString(FollowerFragment.ARG_NAME)
-
         followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
             FollowingViewModel::class.java)
-
         rvFollowing = view.findViewById(R.id.recycleViewFollowing)
         progressBar = view.findViewById(R.id.progressBarFollowing)
-
         followingViewModel.userData.observe(viewLifecycleOwner, { userData ->
             setListUserData(userData)
         })
-
         followingViewModel.isLoading.observe(viewLifecycleOwner, {
             showLoading(it)
         })
-
         followingViewModel.loadDataUser(name.toString())
     }
 
@@ -64,39 +59,10 @@ class FollowingFragment : Fragment() {
         showRecycleView()
     }
 
-//    private fun getDataUsername(usernameUser: String?) {
-//        progressBar.visibility = View.VISIBLE
-//        val client = ApiConfig.getApiService().getFollowing(usernameUser.toString())
-//        client.enqueue(object : Callback<ArrayList<ResponseFollowing>> {
-//            override fun onResponse(
-//                call: Call<ArrayList<ResponseFollowing>>,
-//                response: Response<ArrayList<ResponseFollowing>>
-//            ) {
-//                if (response.isSuccessful) {
-//                    val responseBody = response.body()
-//                    if (responseBody != null) {
-//
-//                        responseBody.forEach { i ->
-//                            val hero = Hero(i?.login, i?.avatarUrl)
-//                            listHero.add(hero)
-//                        }
-//                        showRecycleView()
-//                    }
-//                } else {
-//                    Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
-//                }
-//            }
-//            override fun onFailure(call: Call<ArrayList<ResponseFollowing>>, t: Throwable) {
-//                Log.e(ContentValues.TAG, "onFailure: ${t.message}")
-//            }
-//        })
-//    }
-//
     private fun showRecycleView() {
         rvFollowing.layoutManager = LinearLayoutManager(context)
         val listHeroAdapter = AdapterHero(listHero)
         rvFollowing.adapter = listHeroAdapter
-
         listHeroAdapter.setOnItemClickCallback(object : AdapterHero.OnItemClickCallback {
             override fun onItemClicked(data: Hero) {
                 val bundle = Bundle()
@@ -105,7 +71,6 @@ class FollowingFragment : Fragment() {
                 val fragFollowers = FollowerFragment()
                 fragFollowing.setArguments(bundle)
                 fragFollowers.setArguments(bundle)
-
                 val moveWithObjectIntent = Intent(context, DetailUser::class.java)
                 moveWithObjectIntent.putExtra("DATA", data)
                 startActivity(moveWithObjectIntent)

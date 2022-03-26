@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.fundamental_android.api_service.ApiConfig
 import com.example.fundamental_android.api_service.ResponseApi.ResponseDetailUser
-import com.example.fundamental_android.api_service.ResponseApi.ResponseUsersSearch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,7 +16,7 @@ class DetailViewModel : ViewModel() {
     private val _userData = MutableLiveData<ResponseDetailUser>()
     val userData : LiveData<ResponseDetailUser> = _userData
 
-    private val _isLoading = MutableLiveData<Boolean>(false)
+    private val _isLoading = MutableLiveData(false)
     val isLoading: LiveData<Boolean> = _isLoading
 
     fun loadDataUser(dataUser : String) {
@@ -45,5 +44,4 @@ class DetailViewModel : ViewModel() {
             }
         })
     }
-
 }

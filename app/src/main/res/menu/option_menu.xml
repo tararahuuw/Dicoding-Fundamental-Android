@@ -12,13 +12,11 @@
         android:id="@+id/favorite"
         android:icon="@drawable/favorite"
         android:title="@string/favorite"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="collapseActionView|always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/settings"
         android:title="@string/setings"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="collapseActionView|always" />
+        android:icon="@drawable/settings"
+        app:showAsAction="ifRoom"/>
 </menu>

@@ -10,8 +10,7 @@ data class Hero(
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(login)

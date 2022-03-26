@@ -11,6 +11,21 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:foregroundGravity="bottom"
+            app:backgroundTint="#2196F3"
+            app:fabSize="normal"
+            app:layout_anchorGravity="bottom|end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="#FFFFFF"
+            app:srcCompat="@drawable/favorite_border"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/photo_detail"
             android:layout_width="150dp"
